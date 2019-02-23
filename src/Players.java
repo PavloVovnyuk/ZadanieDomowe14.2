@@ -35,10 +35,7 @@ public class Players implements Comparable<Players> {
 
     @Override
     public String toString() {
-        return "Players{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", result=" + result + "\n";
+        return  name + ", " + surname +", " + result + "\n";
     }
 
     public int compareTo(Players p) {
