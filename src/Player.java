@@ -1,9 +1,9 @@
-public class Players implements Comparable<Players> {
+public class Player implements Comparable<Player> {
     private String name;
     private String surname;
     private int result;
 
-    public Players(String name, String surname, int result) {
+    public Player(String name, String surname, int result) {
         this.name = name;
         this.surname = surname;
         this.result = result;
@@ -35,10 +35,10 @@ public class Players implements Comparable<Players> {
 
     @Override
     public String toString() {
-        return  name + ", " + surname +", " + result + "\n";
+        return name + ", " + surname + ", " + result + "\n";
     }
 
-    public int compareTo(Players p) {
+    public int compareTo(Player p) {
         if (this.result > p.result)
             return 1;
         else if (this.result < p.result)
