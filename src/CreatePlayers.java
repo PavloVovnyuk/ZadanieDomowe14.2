@@ -10,7 +10,6 @@ public class CreatePlayers {
         return player;
     }
 
-
     public List playersInfo() {
         List<Player> lista = new ArrayList<> ();
         String stop = "stop";

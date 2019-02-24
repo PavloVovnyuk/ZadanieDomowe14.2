@@ -7,6 +7,6 @@ public class Main {
         CreatePlayers createPlayers = new CreatePlayers ();
         createPlayers.createPlik ();
     }
-}
+ }
 
 

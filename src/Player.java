@@ -47,4 +47,4 @@ public class Player implements Comparable<Player> {
             return name.compareTo (p.name);
         }
     }
-}
+ }
