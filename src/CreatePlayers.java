@@ -1,26 +1,46 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class CreatePlayers {
-    public static void playersInfo() {
-        List<Players> lista = new ArrayList<> ();
+    public Player createPlayer() {
+        Scanner scanner = new Scanner (System.in);
+        Player player = new Player (scanner.nextLine (), scanner.nextLine (), scanner.nextInt ());
+        return player;
+    }
+
+
+    public List playersInfo() {
+        List<Player> lista = new ArrayList<> ();
         String stop = "stop";
         boolean wyniki = true;
         while (wyniki) {
-            Scanner scanner = new Scanner (System.in);
             System.out.println ("Wprowadz dane gracza");
-            String name = scanner.nextLine ();
-            if (name.equals (stop)) {
+            Player player1 = createPlayer ();
+            if (player1.getName ().equals (stop)) {
                 System.out.println ("Stop");
                 wyniki = false;
             } else {
-                String surname = scanner.nextLine ();
-                int result = scanner.nextInt ();
-                Players players = new Players (name, surname, result);
-                lista.add (players);
+                lista.add (player1);
             }
         }
-        Collections.sort (lista);
-        System.out.println (lista);
+        return lista;
+    }
+
+        public List shovInfo() {
+        List lista1 = playersInfo ();
+        Collections.sort (lista1);
+        System.out.println (lista1);
+        return lista1;
+    }
+
+    public void createPlik() throws IOException {
+        FileWriter fileWriter = new FileWriter ("status.csv");
+        BufferedWriter bfw = new BufferedWriter (fileWriter);
+        bfw.write (shovInfo ().toString ());
+        bfw.close ();
     }
 }
+
 
